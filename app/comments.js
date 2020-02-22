@@ -13,12 +13,11 @@ router.get('/', async (req, res) => {
             select * from comments where new_id = ` + req.query.new_id);
             res.send(data);
         } else {
-            res.send({error: 'Elements not found'})
+            res.send({error: 'Elements not found'});
         }
     }
     data = await dataBaseConnect.appealConnection().query(`
-   select * from comments
-   `);
+   select * from comments`);
     res.send(data);
 });
 
@@ -34,22 +33,22 @@ router.post('/', async (req, res) => {
         if(coming.author){
             await dataBaseConnect.appealConnection().query(`
             insert into comments (new_id, author, comment) values (?,?,?)
-            `, [coming.new_id, coming.author, coming,comment])
+            `, [coming.new_id, coming.author, coming,comment]);
         } else {
             await dataBaseConnect.appealConnection().query(`
             insert into comments (new_id, comment) values  (?,?)
-            `, [coming.new_id, coming.comment])
+            `, [coming.new_id, coming.comment]);
         }
     } else {
-        res.status(404).send({error: `New ${coming.new_id} is not found`})
+        res.status(404).send({error: `New ${coming.new_id} is not found`});
     }
-    res.send('Added')
+    res.send('Added');
 });
 
 router.delete('/:id', async (req, res) => {
     await dataBaseConnect.appealConnection().query(`
     delete from comments where id = ` + req.params.id);
-    res.send(`ELem ${req.params.id} is deleted`)
+    res.send(`ELem ${req.params.id} is deleted`);
 });
 
 module.exports = router;
