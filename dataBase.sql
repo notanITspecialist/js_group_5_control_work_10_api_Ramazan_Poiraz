@@ -32,7 +32,7 @@ CREATE TABLE `comments` (
   PRIMARY KEY (`id`),
   KEY `fk_comments_1_idx` (`new_id`),
   CONSTRAINT `fk_comments_1` FOREIGN KEY (`new_id`) REFERENCES `news` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `comments` (
 
 LOCK TABLES `comments` WRITE;
 /*!40000 ALTER TABLE `comments` DISABLE KEYS */;
-INSERT INTO `comments` VALUES (2,5,'Anonimus','Some comment'),(3,5,'Anonimus','Some comment'),(4,5,'Anonimus','Some comment'),(5,5,'Anonimus','Some comment'),(6,5,'Anonimus','Some comment'),(7,5,'Anonimus','Some comment');
+INSERT INTO `comments` VALUES (8,6,'Author 123132','COntent   cc'),(9,6,'Author 123132','COntent   cc'),(10,6,'Author 123132','COntent   cc'),(11,6,'Author 123132','COntent   cc'),(12,6,'Author 123132','COntent   cc');
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +59,7 @@ CREATE TABLE `news` (
   `image` varchar(45) DEFAULT NULL,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` VALUES (4,'Some title','Some content','94Em9r4rXkPOouXdvFxoR.jpg','2020-02-22 12:24:01'),(5,'Veri middle title','Some content','tXhVuxIl8MPTq6MsZ8EIT.jpg','2020-02-22 13:21:48');
+INSERT INTO `news` VALUES (6,'qe','qwe','','2020-02-22 18:04:10'),(7,'qwe','qwe','','2020-02-22 18:04:16'),(8,'123','123','yAEzoVrfjw-gjBGkOkxYe.jpg','2020-02-22 18:04:29'),(9,'qwe','qwe','C9d7ZjIvqawd1PmXAyi--.jpg','2020-02-22 18:04:37');
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -81,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-22 13:48:45
+-- Dump completed on 2020-02-22 18:08:18
