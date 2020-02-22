@@ -23,7 +23,7 @@ const upload = multer({storage});
 
 router.get('/', async (req, res) => {
     const data = await dataBaseConnect.appealConnection().query(`
-    select title, image, date
+    select id,title, image, date
     from news `);
     res.send(data)
 });
